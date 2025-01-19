@@ -1,0 +1,321 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+		<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+		<script type="text/javascript">
+			window.tailwind.config = {
+				darkMode: ['class'],
+				theme: {
+					extend: {
+						colors: {
+							border: 'hsl(var(--border))',
+							input: 'hsl(var(--input))',
+							ring: 'hsl(var(--ring))',
+							background: 'hsl(var(--background))',
+							foreground: 'hsl(var(--foreground))',
+							primary: {
+								DEFAULT: 'hsl(var(--primary))',
+								foreground: 'hsl(var(--primary-foreground))'
+							},
+							secondary: {
+								DEFAULT: 'hsl(var(--secondary))',
+								foreground: 'hsl(var(--secondary-foreground))'
+							},
+							destructive: {
+								DEFAULT: 'hsl(var(--destructive))',
+								foreground: 'hsl(var(--destructive-foreground))'
+							},
+							muted: {
+								DEFAULT: 'hsl(var(--muted))',
+								foreground: 'hsl(var(--muted-foreground))'
+							},
+							accent: {
+								DEFAULT: 'hsl(var(--accent))',
+								foreground: 'hsl(var(--accent-foreground))'
+							},
+							popover: {
+								DEFAULT: 'hsl(var(--popover))',
+								foreground: 'hsl(var(--popover-foreground))'
+							},
+							card: {
+								DEFAULT: 'hsl(var(--card))',
+								foreground: 'hsl(var(--card-foreground))'
+							},
+						},
+					}
+				}
+			}
+		</script>
+		<style type="text/tailwindcss">
+			@layer base {
+				:root {
+					--background: 0 0% 100%;
+--foreground: 240 10% 3.9%;
+--card: 0 0% 100%;
+--card-foreground: 240 10% 3.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 240 10% 3.9%;
+--primary: 240 5.9% 10%;
+--primary-foreground: 0 0% 98%;
+--secondary: 240 4.8% 95.9%;
+--secondary-foreground: 240 5.9% 10%;
+--muted: 240 4.8% 95.9%;
+--muted-foreground: 240 3.8% 46.1%;
+--accent: 240 4.8% 95.9%;
+--accent-foreground: 240 5.9% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 5.9% 90%;
+--input: 240 5.9% 90%;
+--ring: 240 5.9% 10%;
+--radius: 0.5rem;
+				}
+				.dark {
+					--background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--primary: 0 0% 98%;
+--primary-foreground: 240 5.9% 10%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--ring: 240 4.9% 83.9%;
+				}
+			}
+		</style>
+  </head>
+  <body>
+    
+
+<div class="fixed bottom-4 right-4 z-50">
+  <button class="bg-primary text-primary-foreground p-2 rounded-full shadow-lg" onclick="toggleContent()">Maquininha REDE</button>
+</div>
+
+<div id="content" class="hidden">
+  <div class="flex flex-col items-center bg-primary p-1 rounded-lg shadow-lg max-w-xs mx-auto relative">
+    <div class="bg-card rounded-lg p-0 shadow-md w-full max-w-xs">
+      <div class="text-center font-semibold mt-0 bg-orange-500 text-white">Tim</div>
+      <div class="conteudo mt-0 p-0">
+        <h1 class="text-left text-xl font-bold text-orange-500 relative z-10" style="margin: 10px;">Rede</h1>
+        <p class="text-left text-sm text-muted-foreground" style="margin-left: 10px;">Augusto S/A</p>
+        <p class="text-left text-sm text-muted-foreground" style="margin-left: 10px;">000.000.00/0000-00</p>
+        <p class="text-left text-lg font-semibold mt-2" style="margin-left: 10px;">Digite o valor, passe ou insira o cartão</p>
+        <div class="grid grid-cols-3 gap-2 mt-4" style="margin: 10px; margin-top: 50px;">
+          <button class="bg-secondary text-secondary-foreground p-2 rounded border border-white">Reimprimir</button>
+          <button class="bg-secondary text-secondary-foreground p-2 rounded border border-white">Finalizar</button>
+          <button class="bg-secondary text-secondary-foreground p-2 rounded border border-white">Relatórios</button>
+        </div>
+        <div class="grid grid-cols-3 gap-2 mt-4" style="margin: 10px;">
+          <button class="bg-secondary text-secondary-foreground p-2 rounded border border-white menu">Menu</button>
+          <button class="bg-secondary text-secondary-foreground p-2 rounded border border-white">Função</button>
+          <button class="bg-secondary text-secondary-foreground p-2 rounded border border-white">Testar Conexão</button>
+        </div>
+      </div>
+      <div class="grid bg-black grid-cols-4 gap-1 mt-0 teclado" style="padding-top: 10px;">
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('1')" style="background-color:black">1</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('2')" style="background-color:black">2</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('3')" style="background-color:black">3</button>
+        <button class="bg-black text-red-600 bg-secondary p-2 rounded border border-white font-bold" id="backButton" style="background-color:black">X</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('4')" style="background-color:black">4</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('5')" style="background-color:black">5</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('6')" style="background-color:black">6</button>
+        <button class="bg-black text-yellow-400 bg-secondary p-2 rounded border border-white font-bold" style="background-color:black" onclick="preencherCampo()">←</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('7')" style="background-color:black">7</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('8')" style="background-color:black">8</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('9')" style="background-color:black">9</button>
+
+        <button class="bg-black text-green-600 bg-secondary p-2 rounded border border-white font-bold confirma" style="background-color:black">↓</button>
+
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" style="background-color:black">*</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('0')" style="background-color:black">0</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" style="background-color:black">#</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+ const conteudo = document.querySelector('.conteudo');
+  const teclado = document.querySelector('.teclado');
+
+  const confirmaBtn = document.querySelector('.confirma');
+  const nomeLb = document.createElement('h1');
+  const inputNumero = document.createElement('input');
+  const backButton = document.getElementById('backButton');
+  const menuBtn = document.querySelector('.menu');
+  
+  
+  /* Menu */
+  const novoBotao = document.createElement('button');
+  /* Menu */
+  const btnMenu1 = document.createElement('button');
+  const btnMenu2 = document.createElement('button');
+  const btnMenu3 = document.createElement('button');
+  const btnMenu4 = document.createElement('button');
+  const btnMenu5 = document.createElement('button');
+  const btnMenu6 = document.createElement('button');
+  /*Fim de Menu*/
+
+  function preencherCampo(valor) {backButton
+    inputNumero.value += valor;
+  }
+
+  backButton.addEventListener('click', () => {
+    conteudo.style.display = 'block';
+    nomeLb.remove();
+    inputNumero.remove();
+
+    /*apagando Menu*/
+    btnMenu1.remove();
+    btnMenu2.remove();
+    btnMenu3.remove();
+    btnMenu4.remove();
+    btnMenu5.remove();
+    btnMenu6.remove();
+    /*final do codigo para pagar o menu*/
+  });
+
+  confirmaBtn.addEventListener('click', () => {
+    conteudo.style.display = 'none';
+    nomeLb.textContent = 'Função';
+    nomeLb.classList.add('text-center', 'text-xl', 'font-bold', 'mt-0');
+    teclado.insertAdjacentElement('beforebegin', nomeLb);
+    inputNumero.setAttribute('type', 'number');
+    inputNumero.setAttribute('placeholder', '_ _');
+    inputNumero.classList.add('bg-secondary', 'text-secondary-foreground', 'p-0', 'rounded', 'border', 'border-white', 'mt-0', 'mx-auto', 'w-full', 'text-center', 'inp_funcao');
+    teclado.insertAdjacentElement('beforebegin', inputNumero);
+    inputNumero.style.marginBottom = ('276px'); // Add margin-bottom of 250px
+  });
+
+  menuBtn.addEventListener('click', () => {
+    conteudo.style.display = 'none';
+    nomeLb.textContent = 'Menu';
+    nomeLb.classList.add('text-center', 'text-xl', 'font-bold', 'mt-0');
+    teclado.insertAdjacentElement('beforebegin', nomeLb);
+
+    //*Botoes do menu*//
+    btnMenu1.textContent = 'Maquininha';
+    btnMenu1.textContent = 'Forma de pagamento';
+    btnMenu1.classList.add('bg-secondary', 'text-secondary-foreground', 'p-2', 'rounded', 'border', 'border-white', 'menu');
+    teclado.insertAdjacentElement('beforebegin', btnMenu1);
+
+    btnMenu2.textContent = 'Maquininha';
+    btnMenu2.textContent = 'Maquininhas';
+    btnMenu2.classList.add('bg-secondary', 'text-secondary-foreground', 'p-2', 'rounded', 'border', 'border-white', 'menu');
+    teclado.insertAdjacentElement('beforebegin', btnMenu2);
+
+    btnMenu3.textContent = 'Maquininha';
+    btnMenu3.textContent = 'test ';
+    btnMenu3.classList.add('bg-secondary', 'text-secondary-foreground', 'p-2', 'rounded', 'border', 'border-white', 'menu');
+    teclado.insertAdjacentElement('beforebegin', btnMenu3);
+
+    btnMenu4.textContent = 'Maquininha';
+    btnMenu4.textContent = 'Formas de pagamento ';
+    btnMenu4.classList.add('bg-secondary', 'text-secondary-foreground', 'p-2', 'rounded', 'border', 'border-white', 'menu');
+    teclado.insertAdjacentElement('beforebegin', btnMenu4);
+
+    btnMenu5.textContent = 'Maquininha';
+    btnMenu5.textContent = 'Formas de pagamento ';
+    btnMenu5.classList.add('bg-secondary', 'text-secondary-foreground', 'p-2', 'rounded', 'border', 'border-white', 'menu');
+    teclado.insertAdjacentElement('beforebegin', btnMenu5);
+
+    btnMenu6.textContent = 'Maquininha';
+    btnMenu6.textContent = 'Formas de pagamento ';
+    btnMenu6.classList.add('bg-secondary', 'text-secondary-foreground', 'p-2', 'rounded', 'border', 'border-white', 'menu');
+    teclado.insertAdjacentElement('beforebegin', btnMenu6);
+
+    novoBotao.style.marginBottom = ('276px');
+  
+
+
+  });
+  function toggleContent() {
+    const content = document.getElementById('content');
+    content.classList.toggle('hidden');
+  }
+</script>
+<div class="fixed bottom-4 right-4 z-50">
+  <button class="bg-primary text-primary-foreground p-2 rounded-full shadow-lg" onclick="toggleContent()">Maquininha REDE</button>
+</div>
+<div id="content" class="hidden">
+  <div class="flex flex-col items-center bg-primary p-1 rounded-lg shadow-lg max-w-xs mx-auto relative">
+    <div class="bg-card rounded-lg p-0 shadow-md w-full max-w-xs">
+      <div class="text-center font-semibold mt-0 bg-orange-500 text-white">Tim</div>
+      <div class="conteudo mt-0 p-0">
+        <h1 class="text-left text-xl font-bold text-orange-500 relative z-10" style="margin: 10px;">Rede</h1>
+        <p class="text-left text-sm text-muted-foreground" style="margin-left: 10px;">Augusto S/A</p>
+        <p class="text-left text-sm text-muted-foreground" style="margin-left: 10px;">000.000.00/0000-00</p>
+        <p class="text-left text-lg font-semibold mt-2" style="margin-left: 10px;">Digite o valor, passe ou insira o cartão</p>
+        <div class="grid grid-cols-3 gap-2 mt-4" style="margin: 10px; margin-top: 50px;">
+          <button class="bg-secondary text-secondary-foreground p-2 rounded border border-white">Reimprimir</button>
+          <button class="bg-secondary text-secondary-foreground p-2 rounded border border-white">Finalizar</button>
+          <button class="bg-secondary text-secondary-foreground p-2 rounded border border-white">Relatórios</button>
+        </div>
+        <div class="grid grid-cols-3 gap-2 mt-4" style="margin: 10px;">
+          <button class="bg-secondary text-secondary-foreground p-2 rounded border border-white">Menu</button>
+          <button class="bg-secondary text-secondary-foreground p-2 rounded border border-white">Função</button>
+          <button class="bg-secondary text-secondary-foreground p-2 rounded border border-white">Testar Conexão</button>
+        </div>
+      </div>
+      <div class="grid bg-black grid-cols-4 gap-1 mt-0 teclado" style="padding-top: 10px;">
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('1')" style="background-color:black">1</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('2')" style="background-color:black">2</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('3')" style="background-color:black">3</button>
+        <button class="bg-black text-red-600 bg-secondary p-2 rounded border border-white font-bold" id="backButton" style="background-color:black">X</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('4')" style="background-color:black">4</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('5')" style="background-color:black">5</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('6')" style="background-color:black">6</button>
+        <button class="bg-black text-yellow-400 bg-secondary p-2 rounded border border-white font-bold" style="background-color:black"><</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('7')" style="background-color:black">7</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('8')" style="background-color:black">8</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('9')" style="background-color:black">9</button>
+        <button class="bg-black text-green-600 bg-secondary p-2 rounded border border-white font-bold confirma" onclick="preencherCampo()" style="background-color:black">V</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" style="background-color:black">*</button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" onclick="preencherCampo('0')" style="background-color:black" style="background-color:black">
+          0
+        </button>
+        <button class="bg-black text-white bg-secondary p-2 rounded border border-white font-bold" style="background-color:black">#</button>
+        <button class="bg-black text-green-600 bg-secondary p-2 rounded border border-white font-bold confirma hidden" style="background-color:black">V</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="alertSuccess" class="hidden fixed bottom-4 right-4 z-50">
+  <div class="bg-green-500 text-white p-4 rounded-lg shadow-lg flex justify-between items-center">
+    <span>Success! Your action was successful.</span>
+    <button onclick="dismissAlert('alertSuccess')" class="text-white">&times;</button>
+  </div>
+</div>
+<div id="alertWarning" class="hidden fixed bottom-4 right-4 z-50">
+  <div class="bg-yellow-500 text-white p-4 rounded-lg shadow-lg flex justify-between items-center">
+    <span>Warning! Proceed with caution.</span>
+    <button onclick="dismissAlert('alertWarning')" class="text-white">&times;</button>
+  </div>
+</div>
+<div id="alertError" class="hidden fixed bottom-4 right-4 z-50">
+  <div class="bg-red-500 text-white p-4 rounded-lg shadow-lg flex justify-between items-center">
+    <span>Error! An error occurred.</span>
+    <button onclick="dismissAlert('alertError')" class="text-white">&times;</button>
+  </div>
+</div>
+<script>
+  function dismissAlert(alertId) {
+    const alert = document.getElementById(alertId);
+    alert.classList.add('hidden');
+  }
+</script>
+
+
+  </body>
+</html>
